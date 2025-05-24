@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b54y6io4c53oh"]
+
+[ext_resource type="Script" uid="uid://dqruymyt3ndsh" path="res://drafft/drafft_script_component.gd" id="2_3253y"]
+[ext_resource type="PackedScene" uid="uid://b0mxxptpiig0x" path="res://sword.tscn" id="2_nxogm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="DrafftImporter" type="Node" parent="."]
+
+[node name="Sword" parent="." instance=ExtResource("2_nxogm")]
+position = Vector2(208, 448)
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_3253y")

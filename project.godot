@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Drafft-example"
+run/main_scene="uid://b54y6io4c53oh"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+drafft/db_path="res://drafft/the_goddess_of_fate.json"
+
+[autoload]
+
+Drafft="*res://addons/drafft/drafft_importer.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/drafft/plugin.cfg")
