@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0mxxptpiig0x"]
 
 [ext_resource type="Texture2D" uid="uid://c1yyngnrqb7um" path="res://icon.svg" id="1_74bdg"]
-[ext_resource type="Script" uid="uid://cgba2ieiox0hg" path="res://drafft/drafft_script.gd" id="2_e4ynd"]
+[ext_resource type="Script" uid="uid://dcbnsgwobtlcj" path="res://addons/drafft/drafft_document.gd" id="2_e4ynd"]
 
 [node name="Sword" type="Node2D"]
 

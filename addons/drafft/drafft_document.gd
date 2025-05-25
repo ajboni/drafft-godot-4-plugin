@@ -1,11 +1,14 @@
+@tool
 extends Node
 class_name DrafftDocument
 
 # Unique identifier for the document
 @export var id: String = ""
 
-# Name of the script document
+# Name of the script document, cant use name in godot.
 @export var docName: String = ""
+
+@export_multiline var content: String = ""
 
 # The type of the document (e.g., "Script")
 @export var type: String = ""
@@ -40,11 +43,28 @@ class_name DrafftDocument
 # Revision identifier for the document
 @export var rev: String = ""
 
+
 func from_dict(dict: Dictionary) -> void:
-		for prop in get_property_list():
-				var prop_name = prop.name
-				if dict.has(prop_name):
-					# Use `set()` to assign property automatically
-					set(prop_name, dict[prop_name])
-				if dict.has("_id"): # Check if _id exists in the source dictionary
-					set("id", dict["_id"]) # Set the 'id' property of this resource)
+	for prop in get_property_list():
+			var prop_name = prop.name
+			if dict.has(prop_name) and prop_name != "name" and prop_name != "content":
+				# Use `set()` to assign property automatically
+				set(prop_name, dict[prop_name])
+				
+	if dict.has("_id"):
+			set("id", dict["_id"]) # Set the 'id' property of this resource)
+			
+	if dict.has("content"):
+			set("content", JSON.stringify(dict.content, " ")) # Set the 'id' property of this resource)
+			
+	if dict.has("name"):
+			set("docName", dict.name) # Set the 'id' property of this resource)
+	
+func from_drafft_document(doc: DrafftDocument) -> void:
+	for prop in get_property_list():
+		var prop_name = prop.name
+		if doc.has(prop_name):
+			# Use `set()` to assign property automatically
+			set(prop_name, doc[prop_name])
+		if doc.has("_id"): # Check if _id exists in the source dictionary
+			set("id", doc["_id"]) # Set the 'id' property of this resource)

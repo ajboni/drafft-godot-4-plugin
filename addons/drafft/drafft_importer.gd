@@ -9,7 +9,7 @@ var dbLoaded := false
 var contents: Dictionary = {}
 var meta: Dictionary = {}
 var gdds: Array = []
-static var scripts: Array[DrafftScript] = []
+var scripts: Array = []
 var dialogues: Array = []
 var quests: Array = []
 var items: Array = []
@@ -29,9 +29,11 @@ static func get_instance() -> DrafftImporter:
 		_instance.reload()
 	return _instance
 
+
 # Convenient static getters for common data
-static func get_scripts() -> Array[DrafftScript]:
-	return scripts
+static func get_scripts() -> Array:
+	var instance = get_instance()
+	return instance.scripts if instance else []
 
 static func get_items() -> Array:
 	var instance = get_instance()
@@ -65,6 +67,25 @@ static func is_loaded() -> bool:
 	var instance = get_instance()
 	return instance.dbLoaded if instance else false
 
+static func get_document(doc_id, collection = null) -> DrafftDocument:
+	# Search in all document arrays
+	var instance = get_instance()
+	var collections = [instance.gdds, instance.scripts, instance.dialogues, instance.quests, instance.items, instance.grids, instance.kanban]
+
+	#  if collection is set limit the search for only that, otherwise search all collections
+	if collection:
+		if collections.has(collection):
+			collections = [collections[collection]]
+	
+	for col in collections:
+			for doc in col:
+				if (doc._id == doc_id):
+					print("Found doc with id: ", doc._id)
+					var newDoc: DrafftDocument = DrafftDocument.new()
+					newDoc.from_dict(doc)
+					return newDoc
+	return null
+
 # Static reload method
 static func reload_database():
 	var instance = get_instance()
@@ -94,23 +115,25 @@ func load_from_file(path: String) -> void:
 	contents = json
 	meta = json.get("_meta", {})
 	gdds = json.get("gdds", [])
-	# Get the raw scripts array (of dictionaries) first
-	var raw_scripts: Array = json.get("scripts", [])
+	scripts = json.get("scripts", [])
 	dialogues = json.get("dialogues", [])
 	quests = json.get("quests", [])
 	items = json.get("items", [])
 	grids = json.get("grids", [])
 	kanban = json.get("kanban", [])
 
-	# --- Convert raw script dictionaries to ScriptDocument objects ---
-	var processed_scripts: Array[DrafftScript] = []
-	for raw_script_dict in raw_scripts:
-		var script_doc = DrafftScript.new()
-		script_doc.from_dict(raw_script_dict)
-		processed_scripts.append(script_doc)
+	# You could create a typed class for each of the raw data types
+	# (e.g. DrafftDialogue, DrafftQuest, etc.) and then convert the
+	# raw data to the typed class. This would allow you to access the
+	# data in a more structured way.
 
-	# Assign the array of ScriptDocument objects to the typed variable
-	self.scripts = processed_scripts
+	# # --- Convert raw script dictionaries to ScriptDocument objects ---
+	# var processed_scripts: Array[DrafftScript] = []
+	# for raw_script_dict in raw_scripts:
+	# 	var script_doc = DrafftScript.new()
+	# 	script_doc.from_dict(raw_script_dict)
+	# 	processed_scripts.append(script_doc)
+	# self.scripts = processed_scripts
 	# --- End of conversion ---
 
 	if meta.has("drafftVersion"):
