@@ -43,6 +43,15 @@ class_name DrafftDocument
 # Revision identifier for the document
 @export var rev: String = ""
 
+func _ready() -> void:
+	var clickable = get_node("Sprite")
+	print("clickable: ", clickable)
+	if (clickable):
+		clickable.clicked.connect(_on_click)
+
+func _on_click() -> void:
+	var _content = JSON.parse_string(content)
+	print(_content.item.description)
 
 func from_dict(dict: Dictionary) -> void:
 	for prop in get_property_list():
@@ -56,7 +65,7 @@ func from_dict(dict: Dictionary) -> void:
 			
 	if dict.has("content"):
 			set("content", JSON.stringify(dict.content, " ")) # Set the 'id' property of this resource)
-			
+
 	if dict.has("name"):
 			set("docName", dict.name) # Set the 'id' property of this resource)
 	

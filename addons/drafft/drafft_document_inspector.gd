@@ -15,6 +15,15 @@ func _parse_begin(object: Object) -> void:
 	button.pressed.connect(_on_fill_pressed.bind(object))
 	add_custom_control(button)
 
+	var reloadDbButton = Button.new()
+	reloadDbButton.text = "Reload Drafft Database"
+	reloadDbButton.pressed.connect(_on_reload_pressed)
+	add_custom_control(reloadDbButton)
+
+
+func _on_reload_pressed():
+	DrafftImporter.reload_database()
+
 func _on_fill_pressed(doc: DrafftDocument):
 	if doc.id == "":
 		push_error("No ID set in the document!")

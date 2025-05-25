@@ -1,17 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b54y6io4c53oh"]
+[gd_scene load_steps=4 format=3 uid="uid://b54y6io4c53oh"]
 
 [ext_resource type="Script" uid="uid://dcbnsgwobtlcj" path="res://addons/drafft/drafft_document.gd" id="2_3253y"]
-[ext_resource type="PackedScene" uid="uid://b0mxxptpiig0x" path="res://drafftItem.tscn" id="2_nxogm"]
+[ext_resource type="Texture2D" uid="uid://c1yyngnrqb7um" path="res://icon.svg" id="2_nxogm"]
+[ext_resource type="Script" uid="uid://btq6pv2qo6em7" path="res://clickable.gd" id="3_3253y"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="DrafftImporter" type="Node" parent="."]
-
-[node name="Scorpio Talk" type="Node" parent="."]
+[node name="Drafft Document" type="Node" parent="."]
 script = ExtResource("2_3253y")
 id = "07555f13-af56-4ebe-9201-0c5a437fca6f"
-docName = "asd"
-content = "asdasd"
+docName = "Scorpio Talk"
+content = "{
+ \"script\": \"<FadeIn()>\\n::Kenji::Hello.\\n::Scorpio:: We need to talk. [serious]\\n::Scorpio::I need someone that can help me with something.\\n::Kenji::Ok....\\n::Scorpio::I know you don't know too much about weapons, but maybe you will be useful with something else.\\n::Scorpio::I need to craft one of the rarest swords that was ever seen on this town.\\n::Kenji:: How do you know I can't craft weapons?\\n::Scorpio::I can just tell that.\\n::Scorpio::The weapon is for me by the way, not a custom offer.\\n::Kenji:: How can I help you?\\n::Scorpio::The sword is not driven by any stone.\\n::Scorpio::It takes power from its owner more than anything.\\n::Kenji::Do you want me to give my life for this sword?\\n::Scorpio::No, no. Nothing extreme like that.\\n::Scorpio::The sword feeds on its owner emotions, not life.\\n::Kenji::I am still not sure how I can help you.\\n::Scorpio::Can you hang out with me?\\n::Kenji::Excuse me?\\n::Scorpio::You heard me right. Can you just hang out with me?\\n::Kenji::I am sure this is  a prank, but I am not sure how to feel about it.\\n::Scorpio::Look, I don't have friends.\\n::Scorpio::The closest person to me is Valerie, but for this sword, I need a male.\\n::Narrator:: Valerie was a common friend of ours, another Goddess.\\n\\n\\n::Scorpio::And here is where you come in.\\n::Kenji::Why me and not someone else?\\n::Scorpio::Because you are the closest to me.\\n::Scorpio::Well, literally.\\n::Scorpio::Also, if you don't do well, I can't fire and then kill you.\\n::Scorpio::Or the other way around.  I will have to decide later.\\n::Kenji::I am not sure the last one makes any sense.\\n::Scorpio::Do you really want to tell a goddess of war, what makes sense and what not?\\n::Kenji::I have no idea what foolish soul said anything in here.\\n::Kenji::I will find him and make sure he pays with his own life.\\n::Scorpio::You should do just that.\\n::Kenji::So, let me see if I understood this right.\\n::Kenji::If I help you, this sword might make you really strong.\\n::Scorpio::That's correct.\\n::Kenji::But if I refuse, I am going to get killed.\\n::Scorpio::That's also correct.\\n::Kenji::Do I have a third option or nah?\\n::Scorpio::Absolutely not.\\n::Kenji::Well, I have a feeling out of nowhere to hang out with you.\\n::Kenji::Please tell me more about you and what your dreams are.\\n::Scorpio::See. It wasn't that tough.\\n::Kenji::You are not the one that will die if they refuse.\\n::Kenji::But seriously now, do we just need to talk?\\n::Kenji::How does this sword work?\\n::Scorpio::I am not quite sure myself.\\n::Scorpio::I already have it but it did nothing for me so far.\\n::Scorpio::I thought maybe I was not strong enough but then I realized.\\n::Scorpio::What if I was looking at it the wrong way all this time?\\n::Scorpio::What if it was another emotion? \\n::Kenji::What could it be?\\n::Scorpio::Love.\\n::Kenji::Eh? Are you serious?\\n::Scorpio::A lot of mystical weapons have been hidden from people.\\n::Scorpio::Most of them have a love story behind them.\\n::Scorpio::Think about it.\\n::Scorpio::People started wars because of love, people killed others because of love and people betrayed because of love.\\n::Kenji::I don't think that's quite right.\\n::Kenji::People did all those things because of jealousy, not love.\\n::Scorpio::I found them to be strongly connected with each other.\\n::Kenji::That might be true, but even then, do you need to experience love or jealousy?\\n::Scorpio::Again, I will probably experience both but I think love is the key.\\n::Scorpio::Don't look at me like that. I realize how stupid I sound.\\n::Scorpio::I tried everything else though and I need this sword.\\n::Kenji::Fine, fine. I will help you.\\n::Kenji::What should we do now?\\n::Scorpio::No idea. I was never in love as you can tell and never cared about other guys.\\n::Scorpio::I just wanted to fight my whole life. For an eternity I was only interested about wars and fights.\\n::Kenji::We should probably start with knowing more about each other.\\n::Kenji::What do you like to do?\\n::Scorpio::Start wars and kill others for their stupidity.\\n::Kenji::Maybe something more romantic than that?\\n::Kenji::Walks on the beach?\\n::Scorpio::Only if we need to fight there.\\n::Kenji::Just spending time with someone really close? Maybe hugging them?\\n::Scorpio::The only people that I hug are the death ones when I needed to hide from deadly arrows.\\n::Kenji::Aha.\\n::Kenji::Maybe your favorite drink or food.\\n::Kenji::Please don't even answer that. I assume it will be the blood and tears of your enemies.\\n::Scorpio::Heyyy! I think we are getting to know each other more than we thought.\\n::Kenji::Yes. I am not worried about it at all.\\n::Scorpio::Is this working already? Let me check.\\n::Scorpio::Unfortunately the sword is not responding.\\n::Kenji::What should even happen?\\n::Scorpio::The color should change and I will feel a lot of power going through me.\\n::Kenji::That is something I would love to see.\\n::Kenji::If that's all you needed help with, can I go now?\\n::Scorpio::I suppose so, but we need to meet again too.\\n::Scorpio::This clearly wasn't enough for the sword.\\n\"
+}"
 type = "Script"
 parent = "cdf4d154-7cd5-49db-9a63-d6ad78e958fe"
 path = "Dialogues.01 - Scorpio Encounter.Scorpio Talk"
@@ -20,4 +21,63 @@ modified = "Wed Jan 29 2025 18:18:59 GMT-0300 (Argentina Standard Time)"
 collection = "Script"
 alias = "hardhat"
 
-[node name="Sword" parent="." instance=ExtResource("2_nxogm")]
+[node name="Lost Kitten" type="Node" parent="."]
+script = ExtResource("2_3253y")
+id = "bc81dca9-283b-4a05-8910-eb21dff3d229"
+docName = "Sword"
+content = "{
+ \"item\": {
+  \"description\": \"The most powerful sword in the world. It is not driven by any stone, but by feelings.\",
+  \"lore\": {
+   \"legend\": \"A sword that chooses its wielder based on the purity of their heart. Its true power awakens only through love.\"
+  },
+  \"name\": \"Evergale Blade\",
+  \"properties\": {
+   \"activation\": \"Activated in the end by love\",
+   \"material\": \"Unknown, seemingly weightless yet unbreakable\",
+   \"power_source\": \"Emotions\"
+  },
+  \"type\": \"weapon\"
+ }
+}"
+type = "Item"
+path = "Sword"
+created = "Sun Mar 28 2021 20:46:00 GMT+0300 (Eastern European Summer Time)"
+modified = "Tue Apr 01 2025 00:42:25 GMT-0300 (Argentina Standard Time)"
+collection = "Item"
+alias = "mouse"
+
+[node name="Sprite" type="Sprite2D" parent="Lost Kitten"]
+position = Vector2(81, 78)
+texture = ExtResource("2_nxogm")
+script = ExtResource("3_3253y")
+
+[node name="Evergale Blade" type="Node" parent="."]
+script = ExtResource("2_3253y")
+id = "bc81dca9-283b-4a05-8910-eb21dff3d229"
+docName = "Sword"
+content = "{
+ \"item\": {
+  \"description\": \"The most powerful sword in the world. It is not driven by any stone, but by feelings.\",
+  \"lore\": {
+   \"legend\": \"A sword that chooses its wielder based on the purity of their heart. Its true power awakens only through love.\"
+  },
+  \"name\": \"Evergale Blade\",
+  \"properties\": {
+   \"activation\": \"Activated in the end by love\",
+   \"material\": \"Unknown, seemingly weightless yet unbreakable\",
+   \"power_source\": \"Emotions\"
+  },
+  \"type\": \"weapon\"
+ }
+}"
+type = "Item"
+path = "Sword"
+created = "Sun Mar 28 2021 20:46:00 GMT+0300 (Eastern European Summer Time)"
+modified = "Tue Apr 01 2025 00:42:25 GMT-0300 (Argentina Standard Time)"
+collection = "Item"
+alias = "mouse"
+
+[node name="Evergale Blade" type="Sprite2D" parent="Evergale Blade"]
+position = Vector2(81, 78)
+texture = ExtResource("2_nxogm")
